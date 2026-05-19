@@ -1,0 +1,8 @@
+../Core/Src/angle_ABSOLUTE.c:4:7:map_angle	1
+../Core/Src/angle_ABSOLUTE.c:8:6:Read	6
+../Core/Src/angle_ABSOLUTE.c:35:6:BlindZoneDesignation	14
+../Core/Src/angle_ABSOLUTE.c:135:6:CurrentPositionCalculation	47
+../Core/Src/angle_ABSOLUTE.c:263:5:map	1
+../Core/Src/angle_ABSOLUTE.c:267:6:Calibration	4
+../Core/Src/angle_ABSOLUTE.c:292:6:CMapPrint	5
+../Core/Src/angle_ABSOLUTE.c:306:6:calibration_maps	3

@@ -1,0 +1,4 @@
+../Core/Src/can_CONVERSION.c:3:9:ConvertBytesToInt32	16	static
+../Core/Src/can_CONVERSION.c:8:9:ConvertBytesToInt32_LittleEndian	16	static
+../Core/Src/can_CONVERSION.c:13:6:DecodePart1	8	static
+../Core/Src/can_CONVERSION.c:41:6:DecodePart2	8	static

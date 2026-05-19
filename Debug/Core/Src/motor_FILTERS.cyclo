@@ -1,0 +1,8 @@
+../Core/Src/motor_FILTERS.c:25:7:updateMovingAverage	2
+../Core/Src/motor_FILTERS.c:44:13:IIR_init	1
+../Core/Src/motor_FILTERS.c:49:14:IIR_update	2
+../Core/Src/motor_FILTERS.c:58:14:compute_alpha_from_fc_dt	3
+../Core/Src/motor_FILTERS.c:64:21:median3	4
+../Core/Src/motor_FILTERS.c:89:6:filters_init	3
+../Core/Src/motor_FILTERS.c:101:6:current_voltage	3
+../Core/Src/motor_FILTERS.c:125:6:speed_angle	5

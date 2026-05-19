@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (10.3-2021.10)
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -52,6 +52,12 @@ default.size.stdout \
 OBJDUMP_LIST += \
 F103C8T6_with_help.list \
 
+OBJCOPY_HEX += \
+F103C8T6_with_help.hex \
+
+OBJCOPY_BIN += \
+F103C8T6_with_help.bin \
+
 
 # All Target
 all: main-build
@@ -60,8 +66,8 @@ all: main-build
 main-build: F103C8T6_with_help.elf secondary-outputs
 
 # Tool invocations
-F103C8T6_with_help.elf F103C8T6_with_help.map: $(OBJS) $(USER_OBJS) C:\Users\vvman\Documents\PID\F103C8T6_with_help\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "F103C8T6_with_help.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\vvman\Documents\PID\F103C8T6_with_help\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F103C8T6_with_help.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+F103C8T6_with_help.elf F103C8T6_with_help.map: $(OBJS) $(USER_OBJS) C:\STM_Projects\F103C8T6_with_help\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -gdwarf-4 -o "F103C8T6_with_help.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\STM_Projects\F103C8T6_with_help\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F103C8T6_with_help.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -75,12 +81,22 @@ F103C8T6_with_help.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DE
 	@echo 'Finished building: $@'
 	@echo ' '
 
+F103C8T6_with_help.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "F103C8T6_with_help.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+F103C8T6_with_help.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "F103C8T6_with_help.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) F103C8T6_with_help.elf F103C8T6_with_help.list F103C8T6_with_help.map default.size.stdout
+	-$(RM) F103C8T6_with_help.bin F103C8T6_with_help.elf F103C8T6_with_help.hex F103C8T6_with_help.list F103C8T6_with_help.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
